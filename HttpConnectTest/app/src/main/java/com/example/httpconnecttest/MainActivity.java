@@ -1,8 +1,6 @@
 package com.example.httpconnecttest;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ContentValues;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +12,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -33,11 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 위젯에 대한 참조.
         tv_outPut = (TextView) findViewById(R.id.tv_outPut);
-//        String[] resultText = null;
         String result="";
 
         try{
-//            resultText = jsonListParser(new Task().execute().get());
             result = new Task().execute().get();
             jsonListParser(result);
         } catch (InterruptedException e){
@@ -46,12 +41,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         tv_outPut.setText(resultText);
-
-//        for(int i=0; i<resultText.length; i++){
-//            tv_outPut.setText(resultText[i]);
-//        }
     }
 
+    //URL을 연결해서, HTML 내용을 가져올 수 있음.
     public class Task extends AsyncTask<String, Void, String> {
 
         private String str, receiveMsg;
@@ -88,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //말 그대로 JSON PARSING! Json 내부 내용을 뽑아서 사용할 수 있음.
     public String[] jsonListParser(String jsonString){
         String memSeq = null;
         String memNm = null;

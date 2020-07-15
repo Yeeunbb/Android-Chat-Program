@@ -6,6 +6,7 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
+<<<<<<< HEAD
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
@@ -19,4 +20,6 @@
       </map>
     </option>
   </component>
+=======
+>>>>>>> ba632c6de809970695258e0f89383b0b5b880f6a
 </project>
